@@ -1,0 +1,10 @@
+{
+    "name":  "x-responsable-grid",
+    "version": "1.0.0",
+    "main": "./less/x-responsable.less",
+    "author": "Max Shirshin",
+    "repository": {
+		"type": "git",
+		"url": "git://github.com/ingdir/x-responsable-grid.git"
+	}
+}

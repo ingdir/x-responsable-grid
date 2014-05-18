@@ -1,0 +1,24 @@
+/**
+ * Grid
+ *
+ * Set up responsive grid system.
+ *
+ * This is heavily infleuenced by the Semantic Grid http://semantic.gs
+ *
+ * @author Abban Dunne http://abandon.ie
+ * @author James Wilson http://jimmynotjim.com
+ * @author Max Shirshin max.shirshin@gmail.com
+ * @fork of https://github.com/Abban/Responsable-Grid-System
+ * @version 1.0
+ * @maintainer DeltaMethod GmbH http://deltamethod.com
+ */
+/* Grid options */
+/* Utility variable — you should never need to modify this */
+/* The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack */
+/* Ensure grid columns are set to border-boxes. This is essential */
+/* Fix empty nodes not having any width */
+/* Our row container */
+/* Our column container */
+/* Push adds left margin */
+/* Pull adds right margin */
+/* Breaks current cell flow and starts a new one within the same row container */

@@ -1,0 +1,148 @@
+@import '../less/x-responsable-grid.less';
+
+body {
+    font: normal 12px sans-serif;
+
+    padding: 10px;
+}
+
+.page {
+    // we can also fix maximum page width
+    // max-width: 1000px;
+}
+
+.row {
+    .row();
+
+    border: dotted 3px #999;
+
+    margin-bottom: 10px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.cell {
+    @color: #ffbc64;
+
+    font: normal 10px sans-serif;
+
+    position: relative;
+    min-height: 60px;
+
+    border-style: solid;
+    border-width: 3px;
+    border-color: @color;
+
+    background-clip: content-box;
+    background-color: lighten(@color, 20);
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+
+        background-color: @color;
+        z-index: 100;
+    }
+
+    &_break-row {
+        .break-row();
+    }
+
+    &_column-12 {
+        .column(12);
+
+        &:before {
+            content: '12';
+        }
+    }
+
+    &_column-12-indented {
+        .column(12, 20px);
+
+        &:before {
+            content: '12/20px';
+        }
+    }
+
+    &_column-18 {
+        .column(18);
+
+        &:before {
+            content: '18';
+        }
+    }
+
+    &_column-18-indented {
+        .column(18, 20px);
+
+        &:before {
+            content: '18/20px';
+        }
+    }
+
+    &_column-6 {
+        .column(3);
+        .push(2);
+        .pull(1);
+
+        &:before {
+            content: '2→3←1';
+        }
+    }
+
+    &_subcol {
+        .column(1, 0, 18);
+
+        &:before {
+            content: '1';
+        }
+    }
+
+    &_subcol-container {
+        .column(5, 0, 18);
+
+        .push(1, 18);
+        .pull(1, 18);
+
+        &:before {
+            content: '1→5←1';
+        }
+    }
+
+    &_subsub {
+        .column(1, 5px, 5);
+
+        &:before {
+            content: '1/5px';
+        }
+    }
+
+}
+
+.cell .cell {
+    @color: #b8f00e;
+    border-color: @color;
+    background-color: lighten(@color, 20);
+
+    &:before {
+        top: 10px;
+        background-color: lighten(@color, 20);
+    }
+}
+
+.cell .cell .cell {
+    @color: #71d6ff;
+    border-color: @color;
+    background-color: lighten(@color, 20);
+
+    &:before {
+        top: 20px;
+        background-color: lighten(@color, 20);
+    }
+}
+
+

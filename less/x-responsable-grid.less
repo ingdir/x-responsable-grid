@@ -1,0 +1,94 @@
+﻿/**
+ * Grid
+ *
+ * Set up responsive grid system.
+ *
+ * This is heavily infleuenced by the Semantic Grid http://semantic.gs
+ *
+ * @author Abban Dunne http://abandon.ie
+ * @author James Wilson http://jimmynotjim.com
+ * @author Max Shirshin max.shirshin@gmail.com
+ * @fork of https://github.com/Abban/Responsable-Grid-System
+ * @version 1.0
+ * @maintainer DeltaMethod GmbH http://deltamethod.com
+ */
+
+/* Grid options */
+@gutter_width: 0;
+// Your gutter width
+@columns: 24;
+// The amount of columns you want
+@max_width: 100%;
+// Set a maximum width of the site
+
+// Half the gutter for borders, margin, padding etc
+@gutter: @gutter_width*0.5;
+
+/* Utility variable — you should never need to modify this */
+@gridsystem_width: @columns * 1px;
+@padding: @gutter_width*0.5;
+
+/* The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack */
+.grid-clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/* Ensure grid columns are set to border-boxes. This is essential */
+.grid-border-box() {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Fix empty nodes not having any width */
+.grid-fix-empty-nodes() {
+    &:empty:after {
+        display: block;
+        content: '\A0';
+    }
+}
+
+/* Our row container */
+.row(@padding:0) {
+    .grid-clearfix();
+    .grid-border-box();
+
+    display: block;
+    max-width: @max_width;
+    margin: 0 auto;
+    padding: 0 @padding;
+}
+
+/* Our column container */
+.column(@x, @padding:@padding, @columns:@columns) {
+    .grid-border-box();
+
+    display: inline;
+    float: left;
+    width: 100%*(@x / @columns);
+    padding: 0 @padding;
+
+    .grid-fix-empty-nodes();
+}
+
+/* Push adds left margin */
+.push(@offset:1, @columns:@columns) {
+    margin-left: 100%*(@offset / @columns);
+}
+
+/* Pull adds right margin */
+.pull(@offset:1, @columns:@columns) {
+    margin-right: 100%*(@offset / @columns);
+}
+
+/* Breaks current cell flow and starts a new one within the same row container */
+.break-row() {
+    clear: both;
+}

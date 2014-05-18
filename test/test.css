@@ -1,0 +1,219 @@
+/**
+ * Grid
+ *
+ * Set up responsive grid system.
+ *
+ * This is heavily infleuenced by the Semantic Grid http://semantic.gs
+ *
+ * @author Abban Dunne http://abandon.ie
+ * @author James Wilson http://jimmynotjim.com
+ * @author Max Shirshin max.shirshin@gmail.com
+ * @fork of https://github.com/Abban/Responsable-Grid-System
+ * @version 1.0
+ * @maintainer DeltaMethod GmbH http://deltamethod.com
+ */
+/* Grid options */
+/* Utility variable — you should never need to modify this */
+/* The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack */
+/* Ensure grid columns are set to border-boxes. This is essential */
+/* Fix empty nodes not having any width */
+/* Our row container */
+/* Our column container */
+/* Push adds left margin */
+/* Pull adds right margin */
+/* Breaks current cell flow and starts a new one within the same row container */
+body {
+  font: normal 12px sans-serif;
+  padding: 10px;
+}
+.row {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0;
+  border: dotted 3px #999;
+  margin-bottom: 10px;
+}
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.row:last-of-type {
+  margin-bottom: 0;
+}
+.cell {
+  font: normal 10px sans-serif;
+  position: relative;
+  min-height: 60px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #ffbc64;
+  background-clip: content-box;
+  background-color: #ffe8ca;
+}
+.cell:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background-color: #ffbc64;
+  z-index: 100;
+}
+.cell_break-row {
+  clear: both;
+}
+.cell_column-12 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: 50%;
+  padding: 0 0;
+}
+.cell_column-12:empty:after {
+  display: block;
+  content: '\A0';
+}
+.cell_column-12:before {
+  content: '12';
+}
+.cell_column-12-indented {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: 50%;
+  padding: 0 20px;
+}
+.cell_column-12-indented:empty:after {
+  display: block;
+  content: '\A0';
+}
+.cell_column-12-indented:before {
+  content: '12/20px';
+}
+.cell_column-18 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: 75%;
+  padding: 0 0;
+}
+.cell_column-18:empty:after {
+  display: block;
+  content: '\A0';
+}
+.cell_column-18:before {
+  content: '18';
+}
+.cell_column-18-indented {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: 75%;
+  padding: 0 20px;
+}
+.cell_column-18-indented:empty:after {
+  display: block;
+  content: '\A0';
+}
+.cell_column-18-indented:before {
+  content: '18/20px';
+}
+.cell_column-6 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: 12.5%;
+  padding: 0 0;
+  margin-left: 8.333333333333332%;
+  margin-right: 4.166666666666666%;
+}
+.cell_column-6:empty:after {
+  display: block;
+  content: '\A0';
+}
+.cell_column-6:before {
+  content: '2→3←1';
+}
+.cell_subcol {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: 5.555555555555555%;
+  padding: 0 0;
+}
+.cell_subcol:empty:after {
+  display: block;
+  content: '\A0';
+}
+.cell_subcol:before {
+  content: '1';
+}
+.cell_subcol-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: 27.77777777777778%;
+  padding: 0 0;
+  margin-left: 5.555555555555555%;
+  margin-right: 5.555555555555555%;
+}
+.cell_subcol-container:empty:after {
+  display: block;
+  content: '\A0';
+}
+.cell_subcol-container:before {
+  content: '1→5←1';
+}
+.cell_subsub {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+.cell_subsub:empty:after {
+  display: block;
+  content: '\A0';
+}
+.cell_subsub:before {
+  content: '1/5px';
+}
+.cell .cell {
+  border-color: #b8f00e;
+  background-color: #d5f76d;
+}
+.cell .cell:before {
+  top: 10px;
+  background-color: #d5f76d;
+}
+.cell .cell .cell {
+  border-color: #71d6ff;
+  background-color: #d7f3ff;
+}
+.cell .cell .cell:before {
+  top: 20px;
+  background-color: #d7f3ff;
+}
