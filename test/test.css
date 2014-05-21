@@ -9,12 +9,12 @@
  * @author James Wilson http://jimmynotjim.com
  * @author Max Shirshin max.shirshin@gmail.com
  * @fork of https://github.com/Abban/Responsable-Grid-System
- * @version 1.0
+ * @version 1.1
  * @maintainer DeltaMethod GmbH http://deltamethod.com
  */
 /* Grid options */
 /* Utility variable — you should never need to modify this */
-/* The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack */
+/* The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack, IE6 support removed */
 /* Ensure grid columns are set to border-boxes. This is essential */
 /* Fix empty nodes not having any width */
 /* Our row container */
@@ -76,7 +76,7 @@ body {
   display: inline;
   float: left;
   width: 50%;
-  padding: 0 0;
+  padding: 0 0px;
 }
 .cell_column-12:empty:after {
   display: block;
@@ -108,7 +108,7 @@ body {
   display: inline;
   float: left;
   width: 75%;
-  padding: 0 0;
+  padding: 0 0px;
 }
 .cell_column-18:empty:after {
   display: block;
@@ -140,7 +140,7 @@ body {
   display: inline;
   float: left;
   width: 12.5%;
-  padding: 0 0;
+  padding: 0 0px;
   margin-left: 8.333333333333332%;
   margin-right: 4.166666666666666%;
 }

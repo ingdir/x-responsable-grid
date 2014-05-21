@@ -9,26 +9,26 @@
  * @author James Wilson http://jimmynotjim.com
  * @author Max Shirshin max.shirshin@gmail.com
  * @fork of https://github.com/Abban/Responsable-Grid-System
- * @version 1.0
+ * @version 1.1
  * @maintainer DeltaMethod GmbH http://deltamethod.com
  */
 
 /* Grid options */
-@gutter_width: 0;
-// Your gutter width
-@columns: 24;
-// The amount of columns you want
-@max_width: 100%;
-// Set a maximum width of the site
 
-// Half the gutter for borders, margin, padding etc
-@gutter: @gutter_width*0.5;
+// Your gutter width
+@gutter_width: 0px;
+
+// The amount of columns you want
+@columns: 24;
+
+// Set a maximum width of the site (pixels or 100%)
+@max_width: 100%;
 
 /* Utility variable — you should never need to modify this */
 @gridsystem_width: @columns * 1px;
 @padding: @gutter_width*0.5;
 
-/* The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack */
+/* The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack, IE6 support removed */
 .grid-clearfix() {
     &:before,
     &:after {
